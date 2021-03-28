@@ -25,7 +25,7 @@
 # 0 + (9 - 2) = 0 + 7 = 7
 # 7 + (7 - 2) = 7 + 5 = 12
 #
-# Method 2
+# Method 2 [When I was eating breakfast I thought of a shorter way for this]
 # (9 + 7) - 2^2 = 16 - 4 = 12
 #
 # Expected: 12
