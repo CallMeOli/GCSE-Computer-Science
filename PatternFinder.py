@@ -21,8 +21,12 @@
 # 9, 7
 # len = 2
 #
+# Method 1
 # 0 + (9 - 2) = 0 + 7 = 7
 # 7 + (7 - 2) = 7 + 5 = 12
+#
+# Method 2
+# (9 + 7) - 2^2 = 16 - 4 = 12
 #
 # Expected: 12
 # Output:   12
@@ -36,22 +40,18 @@
 # -1 + (5 - 4)  = -1 + 1  = 0
 # 0  + (6 - 4)  = 0  + 2  = 2
 #
+# Method 2
+# (3 + 4 + 5 + 6) - 4^2 = 18 - 16 = 2
+#
 # Expected: 2
 # Output:   2
 
 def func(sequence): # Define func
-    sequence = str(sequence) # Convert sequence to string so it can be iterated
-    sequenceLength = len(sequence) # Save the length of string as a variable so len(num) isn't repeated later
-    pattern = 0 # Create variable for sum with a default value of 0
-
-    for num in sequence: # Iterate over each number in the sequence
-        num = int(num) # Convert string to integer for calculation
-        pattern += num - sequenceLength # Add (num - sequenceLength) to pattern
-    
-    return pattern # Return so calling the function is equivelant to pattern
+    sequence = [int(num) for num in str(sequence)] # Convert sequence to array so sum() can be used (I used https://www.geeksforgeeks.org/python-convert-number-to-list-of-integers for this)
+    return sum(sequence) - len(sequence)**2 # Pattern = (sum of integers) - (length of sequence^2) # I really do hate that python uses ** instead of ^, it got me stuck for a good few minutes
 
 # Testing                           # Should print:
-print(func(2456))                   # 2
+print(func(3456))                   # 2
 print(func(89265))                  # 5
 print(func(97))                     # 12
 print(func(2113))                   # -9
