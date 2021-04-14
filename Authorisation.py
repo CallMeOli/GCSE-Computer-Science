@@ -20,6 +20,7 @@ logins = {
 
 # Authorise user
 username = None # Define username in the global scope so it can be changed both inside and out of a deeper scope
+# Repeat authorisation loop until broken
 while True:
     # User input
     username = input('Username: ')
@@ -27,6 +28,7 @@ while True:
 
     # Validation
     if username in logins and logins[username] == password:
+        # Break the authorisation loop once the correct credentials have been provided
         break
     else:
         print('Your username or password was incorrect. Try again.')
