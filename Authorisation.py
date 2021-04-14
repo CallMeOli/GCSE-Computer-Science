@@ -1,3 +1,18 @@
+################################################################################################
+# Python authorisation
+
+# Write a program that asks the user for a username and password. (7 marks) 
+# ->    The program keeps asking for the username and password until the correct username and
+#       password have been entered.   
+# ->    The username should be admin and the password 1234abc.  
+# ->    Once you have logged in (i.e. entered the correct username and password), the program 
+#       should respond with a message like (“Hello, <username>. You have successfully logged in”) 
+################################################################################################
+## Made by Oliver Parry
+##
+## 14/04/2021
+################################################################################################
+
 logins = {
     # 'username': 'password'
     'admin': '1234abc'
@@ -11,7 +26,7 @@ while True:
     password = input('Password: ')
 
     # Validation
-    if logins[username] == password:
+    if username in logins and logins[username] == password:
         break
     else:
         print('Your username or password was incorrect. Try again.')
